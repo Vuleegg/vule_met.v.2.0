@@ -74,17 +74,18 @@ RSE('met:dajeitem', function()
     end
 end)
 
+
 RSE('met:preradio', function()
     local igrac = ESX.GetPlayerFromId(source)
     local prerada = igrac.getInventoryItem('pouches').count  and igrac.getInventoryItem('unprocessed_meth').count   
     local distanca = #(GetEntityCoords(GetPlayerPed(source)) - vector3(1391.379, 3605.587, 39.061))
     local isplata = 0 
-    isplata = 2 * kuvanje
+    isplata = 2 * prerada
 
 
 
     if distanca < 4.5 then
-        if kuvanje >= 10 then
+        if prerada >= 10 then
 
             igrac.addInventoryItem("pure_meth", isplata)
             igrac.removeInventoryItem('pouches', prerada)
